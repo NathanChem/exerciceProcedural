@@ -5,10 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercice Procédural</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
   </head>
-  <body>
-    <main>
-      <section class="container"></section>
+  <body style="background-color: bisque">
+    <main class="d-flex flex-column justify-content-center align-items-center">
+      <h1>Algorithmes</h1>
+      <section class="container d-flex flex-column align-items-center">
+        <form>
+          <div class="form-group text-center">
+            <label for="age">Saisissez votre âge :</label>
+            <input type="text" name="form" id="age" class="form-control" />
+            <p class="text-muted">Devez vous payer l'impôt ?</p>
+          </div>
+          <div class="form-group">
+            <label for="gender">Choisissez le genre</label>
+            <select class="form-control" name="form" id="gender">
+              <option value="homme">Homme</option>
+              <option value="femme">Femme</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Valider</button>
+        </form>
+        <p id="result">Resultat</p>
+      </section>
     </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
