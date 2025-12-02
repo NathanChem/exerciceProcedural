@@ -16,8 +16,8 @@
     <main class="d-flex flex-column justify-content-center align-items-center">
       <h1>Algorithmes</h1>
       <section class="container d-flex flex-column align-items-center">
-        <form>
-          <div class="form-group text-center">
+        <form id="taxesForm">
+          <div class="form-group">
             <label for="age">Saisissez votre âge :</label>
             <input type="text" name="form" id="age" class="form-control" />
             <p class="text-muted">Devez vous payer l'impôt ?</p>
@@ -31,7 +31,28 @@
           </div>
           <button class="btn btn-primary" type="submit">Valider</button>
         </form>
-        <p id="result">Resultat</p>
+        <p id="taxesResult">Resultat</p>
+      </section>
+      <section class="container d-flex flex-column align-items-center">
+        <form id="photocopiesForm">
+          <label for="photocopies">Combien de photocopies voulez-vous ?</label>
+          <input
+            class="form-control"
+            type="text"
+            name="photocopy"
+            id="photocopies"
+          />
+          <button class="btn btn-primary" type="submit">Valider</button>
+        </form>
+        <p id="photocopiesResult">Resultat</p>
+      </section>
+      <section class="container d-flex flex-column align-items-center">
+        <form id="timeForm">
+          <label for="time">Entrez l'heure (xxHxxMxxS)</label>
+          <input type="text" name="time" id="time" class="form-control" />
+          <button class="btn btn-primary" type="submit">Valider</button>
+        </form>
+        <p id="timeResult">Resultat</p>
       </section>
     </main>
     <script
