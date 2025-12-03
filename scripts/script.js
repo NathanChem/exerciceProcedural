@@ -224,3 +224,54 @@ justePrixForm.addEventListener("submit", function (event) {
   }
   document.getElementById("juste-prix-guess").value = "";
 });
+
+const changeForm = document.getElementById("change-form");
+const changeResult = document.getElementById("change-result");
+
+changeForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const changePrice = parseFloat(document.getElementById("change-price").value);
+  const changePaid = parseFloat(document.getElementById("change-paid").value);
+  const changeToGive = changePaid - changePrice;
+
+  if (isNaN(changePrice) || isNaN(changePaid)) {
+    changeResult.textContent = "Veuillez entrer des montants valides.";
+    return;
+  }
+
+  function calculateChange(change) {
+    const denominations = [1, 5, 10];
+    const changeDenominations = {};
+    for (let denom of denominations.reverse()) {
+      while (change >= denom) {
+        if (!changeDenominations[denom]) {
+          changeDenominations[denom] = 0;
+        }
+        changeDenominations[denom] += 1;
+        change -= denom;
+        change = Math.round(change * 100) / 100; // éviter les erreurs de précision
+      }
+    }
+    return changeDenominations;
+  }
+
+  const changeDenominations = calculateChange(changeToGive);
+  console.log(changeDenominations);
+
+  if (changeToGive < 0) {
+    changeResult.textContent = "Le montant payé est insuffisant.";
+  } else {
+    let resultText = `Monnaie à rendre : ${changeToGive.toFixed(2)} €<br>`;
+    for (const denom of Object.keys(changeDenominations).sort(
+      (a, b) => b - a
+    )) {
+      if (changeDenominations[denom] > 0) {
+        resultText += `${denom}€ x ${changeDenominations[denom]}<br>`;
+      }
+    }
+    if (Object.keys(changeDenominations).length === 0 && changeToGive === 0) {
+      resultText = "Pas de monnaie à rendre.";
+    }
+    changeResult.innerHTML = resultText;
+  }
+});

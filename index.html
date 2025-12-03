@@ -16,6 +16,7 @@
     <main class="d-flex flex-column justify-content-center align-items-center">
       <h1>Algorithmes</h1>
       <section class="container d-flex flex-column align-items-center">
+        <h2>Calcul des impôts</h2>
         <form id="taxesForm">
           <div class="form-group">
             <label for="age">Saisissez votre âge :</label>
@@ -34,6 +35,7 @@
         <p id="taxesResult">Resultat</p>
       </section>
       <section class="container d-flex flex-column align-items-center">
+        <h2>Calcul du prix des photocopies</h2>
         <form id="photocopiesForm">
           <label for="photocopies">Combien de photocopies voulez-vous ?</label>
           <input
@@ -47,6 +49,7 @@
         <p id="photocopiesResult">Resultat</p>
       </section>
       <section class="container d-flex flex-column align-items-center">
+        <h2>Conversion de temps</h2>
         <form id="timeForm">
           <label for="time">Entrez l'heure (xxHxxMxxS)</label>
           <input type="text" name="time" id="time" class="form-control" />
@@ -54,7 +57,33 @@
         </form>
         <p id="timeResult">Resultat</p>
       </section>
+
       <section class="container d-flex flex-column align-items-center">
+        <h2>Calculateur de monnaie</h2>
+        <form id="change-form">
+          <label for="change-price">Entrez le prix de votre article :</label>
+          <input
+            type="text"
+            name="change-price"
+            id="change-price"
+            class="form-control"
+          />
+          <label for="change-paid"
+            >Entrez la somme donnée par le client :</label
+          >
+          <input
+            type="text"
+            name="change-paid"
+            id="change-paid"
+            class="form-control"
+          />
+          <button class="btn btn-primary" type="submit">Valider</button>
+        </form>
+        <p id="change-result">Resultat</p>
+      </section>
+
+      <section class="container d-flex flex-column align-items-center">
+        <h2>Vérificateur format d'adresse email</h2>
         <form id="email-form">
           <label for="email">Entrez votre adresse email :</label>
           <input type="text" name="email" id="email" class="form-control" />
@@ -63,6 +92,7 @@
         <p id="email-result">Resultat</p>
       </section>
       <section class="container d-flex flex-column align-items-center">
+        <h2>Calcul d'assurance</h2>
         <form id="assurance-form">
           <label for="assurance-age">Entrez votre âge :</label>
           <input
@@ -103,6 +133,7 @@
         <p id="assurance-result">Resultat</p>
       </section>
       <section class="container d-flex flex-column align-items-center">
+        <h2>Vérification de mot de passe</h2>
         <form id="password-form">
           <label for="password">Entrez votre mot de passe :</label>
           <input
@@ -120,6 +151,7 @@
         </form>
       </section>
       <section class="container d-flex flex-column align-items-center">
+        <h2>Jeu du juste prix</h2>
         <form
           id="juste-prix-form"
           class="d-flex flex-column"
